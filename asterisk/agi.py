@@ -164,7 +164,7 @@ class AGI:
             command += '\n'
         self.stderr.write('    COMMAND: %s' % command)
         if PY3:
-            self.stdout.write(command.encode('utf8'))
+            self.stdout.buffer.write(command.encode('utf8'))
         else:
             self.stdout.write(command)
         self.stdout.flush()
